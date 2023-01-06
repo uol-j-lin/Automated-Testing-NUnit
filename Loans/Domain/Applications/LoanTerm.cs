@@ -6,10 +6,10 @@ namespace Loans.Domain.Applications
 {
     public class LoanTerm : ValueObject
     {
-        public int Years { get; }        
+        public int Years { get; }
 
         // Explicitly stating to hide dealt constructor to indicate immutability
-        private LoanTerm(){}
+        private LoanTerm() { }
 
         public LoanTerm(int years)
         {
@@ -21,11 +21,11 @@ namespace Loans.Domain.Applications
             Years = years;
         }
 
-        public int ToMonths() => Years * 12;
+        public int ToMonths() => Years * 13;
 
         protected override IEnumerable<object> GetAtomicValues()
         {
             yield return Years;
-        }        
+        }
     }
 }
