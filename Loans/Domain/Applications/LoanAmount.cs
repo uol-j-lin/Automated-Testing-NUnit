@@ -22,6 +22,6 @@ namespace Loans.Domain.Applications
         {
             yield return CurrencyCode;
             yield return Principal;
-        }        
+        }
     }
 }
