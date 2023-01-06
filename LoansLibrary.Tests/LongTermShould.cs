@@ -17,6 +17,7 @@ namespace LoansLibrary.Tests
             // system under test
             var sut = new LoanTerm(1);
 
+            // use constraint model of assertions over classic model
             Assert.That(sut.ToMonths(), Is.EqualTo(12));
         }
     }
