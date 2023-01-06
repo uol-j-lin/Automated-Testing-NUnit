@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "7c+2808yXDAY0b+6Bshd6SeeOxvLrctHXLafyBalVsaKH8TkTm2LW5z5IwRwykBHzG0gjW83G4HZ1OaI6TmP1Q==",
+  "dgSpecHash": "W1wS+ZhhrI+MMmbbTP5bsru1rnOagGQz0GUaZc6tgGeZYLUQlSnrOsTKmaB8L353/YsobDdIQ4TpuzSID8Yuag==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Downloads\\nunit\\Automated-Testing-NUnit\\LoansLibrary.Tests\\LoansLibrary.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\nunit3testadapter\\4.3.1\\nunit3testadapter.4.3.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -52,6 +52,10 @@
             "NUnit": {
               "target": "Package",
               "version": "[3.13.3, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             }
           },
           "imports": [

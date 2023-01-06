@@ -45,6 +45,12 @@
           "build/NUnit.props": {}
         }
       },
+      "NUnit3TestAdapter/4.3.1": {
+        "type": "package",
+        "build": {
+          "build/netcoreapp3.1/NUnit3TestAdapter.props": {}
+        }
+      },
       "Loans/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -227,6 +233,31 @@
         "nunit.nuspec"
       ]
     },
+    "NUnit3TestAdapter/4.3.1": {
+      "sha512": "R+bGFtsUpLWywjT1nb3xMmoVa2AIw6ClIGC+XjW9lYE8hwJeos+NdR/mtg4RXbBphmC9epALrnUc6MM7mUG8+Q==",
+      "type": "package",
+      "path": "nunit3testadapter/4.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net35/NUnit3.TestAdapter.dll",
+        "build/net35/NUnit3.TestAdapter.pdb",
+        "build/net35/NUnit3TestAdapter.props",
+        "build/net35/nunit.engine.api.dll",
+        "build/net35/nunit.engine.core.dll",
+        "build/net35/nunit.engine.dll",
+        "build/net35/testcentric.engine.metadata.dll",
+        "build/netcoreapp3.1/NUnit3.TestAdapter.dll",
+        "build/netcoreapp3.1/NUnit3.TestAdapter.pdb",
+        "build/netcoreapp3.1/NUnit3TestAdapter.props",
+        "build/netcoreapp3.1/nunit.engine.api.dll",
+        "build/netcoreapp3.1/nunit.engine.core.dll",
+        "build/netcoreapp3.1/nunit.engine.dll",
+        "build/netcoreapp3.1/testcentric.engine.metadata.dll",
+        "nunit3testadapter.4.3.1.nupkg.sha512",
+        "nunit3testadapter.nuspec"
+      ]
+    },
     "Loans/1.0.0": {
       "type": "project",
       "path": "../Loans/Loans.csproj",
@@ -236,7 +267,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Loans >= 1.0.0",
-      "NUnit >= 3.13.3"
+      "NUnit >= 3.13.3",
+      "NUnit3TestAdapter >= 4.3.1"
     ]
   },
   "packageFolders": {
@@ -291,6 +323,10 @@
           "NUnit": {
             "target": "Package",
             "version": "[3.13.3, )"
+          },
+          "NUnit3TestAdapter": {
+            "target": "Package",
+            "version": "[4.3.1, )"
           }
         },
         "imports": [
