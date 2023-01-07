@@ -81,5 +81,11 @@ namespace LoansLibrary.Tests
             // specify tolerance using a percent modifier
             Assert.That(a, Is.EqualTo(0.33).Within(10).Percent);
         }
+
+        [Test]
+        public void NotAllowZeroYears()
+        {
+            Assert.That(() => new LoanTerm(0), Throws.TypeOf<ArgumentOutOfRangeException>());
+        }
     }
 }
