@@ -18,7 +18,7 @@ namespace LoansLibrary.Tests
             var sut = new LoanTerm(1);
 
             // use constraint model of assertions over classic model
-            Assert.That(sut.ToMonths(), Is.EqualTo(12));
+            Assert.That(sut.ToMonths(), Is.EqualTo(12), "Months should be 12 * number of years");
         }
 
         [Test]
