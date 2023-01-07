@@ -69,5 +69,14 @@ namespace LoansLibrary.Tests
             Assert.That(x, Is.SameAs(y));
             Assert.That(x, Is.Not.SameAs(z));
         }
+
+        [Test]
+        public void Double()
+        {
+            double a = 1.0 / 3.0;
+
+            // specify fixed value of tolerance
+            Assert.That(a, Is.EqualTo(0.33).Within(0.004));
+        }
     }
 }
