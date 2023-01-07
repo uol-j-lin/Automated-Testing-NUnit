@@ -1,8 +1,11 @@
 ﻿using Loans.Domain.Applications;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -86,6 +89,11 @@ namespace LoansLibrary.Tests
         public void NotAllowZeroYears()
         {
             Assert.That(() => new LoanTerm(0), Throws.TypeOf<ArgumentOutOfRangeException>());
+
+            Assert.That(() => new LoanTerm(0), Throws.TypeOf<ArgumentOutOfRangeException>()
+            .With
+            .Message // message property
+                .EqualTo("Please specify a value greater than 0. (Parameter 'years')"));
         }
     }
 }
