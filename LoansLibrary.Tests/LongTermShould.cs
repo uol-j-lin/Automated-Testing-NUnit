@@ -77,6 +77,9 @@ namespace LoansLibrary.Tests
 
             // specify fixed value of tolerance
             Assert.That(a, Is.EqualTo(0.33).Within(0.004));
+
+            // specify tolerance using a percent modifier
+            Assert.That(a, Is.EqualTo(0.33).Within(10).Percent);
         }
     }
 }
