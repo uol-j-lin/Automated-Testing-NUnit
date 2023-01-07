@@ -32,5 +32,15 @@ namespace LoansLibrary.Tests
             // assert phase
             Assert.That(sut.Years, Is.EqualTo(1));
         }
+
+        [Test]
+        public void RespectValueEquality()
+        {
+            // two reference types
+            var a = new LoanTerm(1);
+            var b = new LoanTerm(1);
+
+            Assert.That(a, Is.EqualTo(b));
+        }
     }
 }
