@@ -61,6 +61,13 @@ namespace LoansLibrary.Tests
 
             Assert.That(a, Is.SameAs(b));
             Assert.That(a, Is.Not.SameAs(c));
+
+            var x = new List<string> { "a", "b" };
+            var y = x;
+            var z = new List<string> { "a", "b" };
+
+            Assert.That(x, Is.SameAs(y));
+            Assert.That(x, Is.Not.SameAs(z));
         }
     }
 }
