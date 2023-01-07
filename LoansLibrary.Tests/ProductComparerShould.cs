@@ -26,5 +26,22 @@ namespace LoansLibrary.Tests
 
             Assert.That(comparisons, Has.Exactly(3).Items);
         }
+
+        [Test]
+        public void NotReturnDuplicateComparisons()
+        {
+            var products = new List<LoanProduct>
+            {
+                new LoanProduct(1, "a", 1),
+                new LoanProduct(2, "b", 2),
+                new LoanProduct(3, "c", 3),
+            };
+
+            var sut = new ProductComparer(new LoanAmount("USD", 200_000m), products);
+
+            List<MonthlyRepaymentComparison> comparisons = sut.CompareMonthlyRepayments(new LoanTerm(30));
+
+            Assert.That(comparisons, Is.Unique);
+        }
     }
 }
