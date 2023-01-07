@@ -24,8 +24,6 @@ namespace Loans.Domain
         }
 
         protected abstract IEnumerable<object> GetAtomicValues();
-
-        /*
         public override bool Equals(object obj)
         {
             if (obj == null || obj.GetType() != GetType())
@@ -50,14 +48,12 @@ namespace Loans.Domain
             }
             return !thisValues.MoveNext() && !otherValues.MoveNext();
         }
-
         public override int GetHashCode()
         {
             return GetAtomicValues()
              .Select(x => x != null ? x.GetHashCode() : 0)
              .Aggregate((x, y) => x ^ y);
         }
-        */
 
         public ValueObject GetCopy()
         {
