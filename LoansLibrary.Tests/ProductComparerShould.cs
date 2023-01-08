@@ -29,6 +29,13 @@ namespace LoansLibrary.Tests
             sut = new ProductComparer(new LoanAmount("USD", 200_000m), products);
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            // Runs after each test executes
+            // sut.Dispose(); if IDisposable is implemented
+        }
+
         [Test]
         public void ReturnCorrectNumberOfComparisons()
         {
