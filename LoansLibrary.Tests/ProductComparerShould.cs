@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 namespace LoansLibrary.Tests
 {
     [TestFixture]
+    [Category("Product Comparison")]
+
     public class ProductComparerShould
     {
         [Test]

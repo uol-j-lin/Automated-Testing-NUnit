@@ -9,6 +9,7 @@ using NUnit.Framework;
 namespace LoansLibrary.Tests
 {
     [TestFixture]
+    [Category("Product Comparison")]
     public class MonthlyRepaymentComparisonShould
     {
         [Test]
@@ -17,7 +18,7 @@ namespace LoansLibrary.Tests
             var a = new MonthlyRepaymentComparison("a", 42.42m, 22.22m);
             var b = new MonthlyRepaymentComparison("a", 42.42m, 22.22m);
 
-            Assert.That(a, Is.EqualTo(b));
+            Assert.That(a, Is.EqualTo(b), "Failed equality test");
         }
 
         [Test]
