@@ -94,6 +94,11 @@ namespace LoansLibrary.Tests
             .With
             .Message // message property
                 .EqualTo("Please specify a value greater than 0. (Parameter 'years')"));
+
+            Assert.That(() => new LoanTerm(0), Throws.TypeOf<ArgumentOutOfRangeException>()
+                .With
+                .Matches<ArgumentOutOfRangeException>(
+                    ex => ex.ParamName == "years"));
         }
     }
 }
