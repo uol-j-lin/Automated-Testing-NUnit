@@ -13,18 +13,25 @@ namespace LoansLibrary.Tests
 
     public class ProductComparerShould
     {
-        [Test]
-        public void ReturnCorrectNumberOfComparisons()
+        private List<LoanProduct> products;
+        private ProductComparer sut;
+
+        [SetUp]
+        public void Setup()
         {
-            var products = new List<LoanProduct>
+            products = new List<LoanProduct>
             {
                 new LoanProduct(1, "a", 1),
                 new LoanProduct(2, "b", 2),
                 new LoanProduct(3, "c", 3),
             };
 
-            var sut = new ProductComparer(new LoanAmount("USD", 200_000m), products);
+            sut = new ProductComparer(new LoanAmount("USD", 200_000m), products);
+        }
 
+        [Test]
+        public void ReturnCorrectNumberOfComparisons()
+        {
             List<MonthlyRepaymentComparison> comparisons = sut.CompareMonthlyRepayments(new LoanTerm(30));
 
             Assert.That(comparisons, Has.Exactly(3).Items);
@@ -33,15 +40,6 @@ namespace LoansLibrary.Tests
         [Test]
         public void NotReturnDuplicateComparisons()
         {
-            var products = new List<LoanProduct>
-            {
-                new LoanProduct(1, "a", 1),
-                new LoanProduct(2, "b", 2),
-                new LoanProduct(3, "c", 3),
-            };
-
-            var sut = new ProductComparer(new LoanAmount("USD", 200_000m), products);
-
             List<MonthlyRepaymentComparison> comparisons = sut.CompareMonthlyRepayments(new LoanTerm(30));
 
             Assert.That(comparisons, Is.Unique);
@@ -50,15 +48,6 @@ namespace LoansLibrary.Tests
         [Test]
         public void ReturnComparisonForFirstProduct()
         {
-            var products = new List<LoanProduct>
-            {
-                new LoanProduct(1, "a", 1),
-                new LoanProduct(2, "b", 2),
-                new LoanProduct(3, "c", 3),
-            };
-
-            var sut = new ProductComparer(new LoanAmount("USD", 200_000m), products);
-
             List<MonthlyRepaymentComparison> comparisons = sut.CompareMonthlyRepayments(new LoanTerm(30));
 
             // need to also know the expected monthly repayment
@@ -70,15 +59,6 @@ namespace LoansLibrary.Tests
         [Test]
         public void ReturnComparisonForFirstProduct_WithPartialKnownExpectedValues()
         {
-            var products = new List<LoanProduct>
-            {
-                new LoanProduct(1, "a", 1),
-                new LoanProduct(2, "b", 2),
-                new LoanProduct(3, "c", 3),
-            };
-
-            var sut = new ProductComparer(new LoanAmount("USD", 200_000m), products);
-
             List<MonthlyRepaymentComparison> comparisons = sut.CompareMonthlyRepayments(new LoanTerm(30));
 
             //var expectedProduct = new MonthlyRepaymentComparison("a", 1, 643.28m);
