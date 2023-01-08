@@ -29,6 +29,15 @@ namespace LoansLibrary.Tests
             };
         }
 
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            // run after last test in this test class (fixture) executes
+            // e.g. disposing of shared expensive setup performed in OneTimeSetUp
+
+            // products.Dispose(); e.g. if products implemented IDisposable
+        }
+
         [SetUp]
         public void Setup()
         {
