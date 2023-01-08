@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace LoansLibrary.Tests
 {
-    [TestFixture]
+    [TestFixture] // not needed since NUnit3 
+    [Ignore("Need to complete update work")]
     internal class LongTermShould
     {
         [Test]
-        [Ignore("Need to complete update work")]
         public void ReturnTermInMonths()
         {
             // system under test
