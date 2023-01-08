@@ -16,16 +16,22 @@ namespace LoansLibrary.Tests
         private List<LoanProduct> products;
         private ProductComparer sut;
 
-        [SetUp]
-        public void Setup()
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
         {
+            // simulate long setup initialization time for a list of products
+            // assume list will not be modified by any tests as this may break other tests (i.e. break test isolation)
             products = new List<LoanProduct>
             {
                 new LoanProduct(1, "a", 1),
                 new LoanProduct(2, "b", 2),
                 new LoanProduct(3, "c", 3),
             };
+        }
 
+        [SetUp]
+        public void Setup()
+        {
             sut = new ProductComparer(new LoanAmount("USD", 200_000m), products);
         }
 
