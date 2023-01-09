@@ -20,5 +20,15 @@ namespace LoansLibrary.Tests
 
             Assert.That(monthlyPayment, Is.EqualTo(1264.14));
         }
+
+        [Test]
+        public void CalculateCorrectYearlyRepayment_10Percent()
+        {
+            var sut = new LoanRepaymentCalculator();
+
+            var monthlyPayment = sut.CalculateMonthlyRepayment(new LoanAmount("USD", 200_000), 10m, new LoanTerm(30));
+
+            Assert.That(monthlyPayment, Is.EqualTo(1755.14));
+        }
     }
 }
