@@ -38,5 +38,16 @@ namespace LoansLibrary.Tests
             return sut.CalculateMonthlyRepayment(new LoanAmount("USD", principal), interestRate, new LoanTerm(termInYears));
         }
 
+        // make data-driven test
+        [Test]
+        [TestCaseSource(typeof(MonthlyRepaymentTestData), "TestCases")]
+        public void CalculateCorrectMonthlyRepayment_Centralized(decimal principal, decimal interestRate, int termInYears, decimal expectedMonthlyPayment)
+        {
+            var sut = new LoanRepaymentCalculator();
+            var monthlyPayment = sut.CalculateMonthlyRepayment(new LoanAmount("USD", principal), interestRate, new LoanTerm(termInYears));
+
+            Assert.That(monthlyPayment, Is.EqualTo(expectedMonthlyPayment));
+        }
+
     }
 }
