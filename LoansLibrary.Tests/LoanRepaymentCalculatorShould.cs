@@ -26,5 +26,17 @@ namespace LoansLibrary.Tests
             Assert.That(monthlyPayment, Is.EqualTo(expectedMonthlyPayment));
         }
 
+        // make data-driven test
+        [Test]
+        // provide method-level test data
+        [TestCase(200_000, 6.5, 30, ExpectedResult = 1264.14)]
+        [TestCase(200_000, 10, 30, ExpectedResult = 1755.14)]
+        [TestCase(500_000, 10, 30, ExpectedResult = 4387.86)]
+        public decimal CalculateCorrectMonthlyRepayment_SimplifiedTestCase(decimal principal, decimal interestRate, int termInYears)
+        {
+            var sut = new LoanRepaymentCalculator();
+            return sut.CalculateMonthlyRepayment(new LoanAmount("USD", principal), interestRate, new LoanTerm(termInYears));
+        }
+
     }
 }
