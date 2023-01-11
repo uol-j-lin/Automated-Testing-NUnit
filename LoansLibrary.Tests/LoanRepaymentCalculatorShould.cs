@@ -28,7 +28,7 @@ namespace LoansLibrary.Tests
 
         // make data-driven test
         [Test]
-        // provide method-level test data
+        // provide method-level test data - disadvantage for test case: cannot share test data across test methods/classes
         [TestCase(200_000, 6.5, 30, ExpectedResult = 1264.14)]
         [TestCase(200_000, 10, 30, ExpectedResult = 1755.14)]
         [TestCase(500_000, 10, 30, ExpectedResult = 4387.86)]

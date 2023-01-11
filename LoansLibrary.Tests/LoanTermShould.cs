@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace LoansLibrary.Tests
 {
     [TestFixture] // not needed since NUnit3 
-    internal class LongTermShould
+    internal class LoanTermShould
     {
         [Test]
         public void ReturnTermInMonths()
