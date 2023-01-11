@@ -5,19 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using Loans.Domain.Applications;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 
 namespace LoansLibrary.Tests
 {
+    [TestFixture]
     public class LoanRepaymentCalculatorShould
+
     {
+        // make data-driven test
         [Test]
-        public void CalculateCorrectMonthlyRepayment()
+        // provide method-level test data
+        [TestCase(200_000, 6.5, 30, 1264.14)]
+        [TestCase(200_000, 10, 30, 1755.14)]
+        [TestCase(500_000, 10, 30, 4387.86)]
+        public void CalculateCorrectMonthlyRepayment(decimal principal, decimal interestRate, int termInYears, decimal expectedMonthlyPayment)
         {
             var sut = new LoanRepaymentCalculator();
-            var monthlyPayment = sut.CalculateMonthlyRepayment(new LoanAmount("USD", 200_000), 6.5m, new LoanTerm(30));
+            var monthlyPayment = sut.CalculateMonthlyRepayment(new LoanAmount("USD", principal), interestRate, new LoanTerm(termInYears));
 
-            Assert.That(monthlyPayment, Is.EqualTo(1264.14));
+            Assert.That(monthlyPayment, Is.EqualTo(expectedMonthlyPayment));
         }
+
     }
 }
