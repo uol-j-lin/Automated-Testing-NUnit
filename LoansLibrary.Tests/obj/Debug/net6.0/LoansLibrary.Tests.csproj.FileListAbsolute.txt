@@ -99,3 +99,4 @@ C:\Users\Admin\Downloads\nunit\Automated-Testing-NUnit\LoansLibrary.Tests\obj\De
 C:\Users\Admin\Downloads\nunit\Automated-Testing-NUnit\LoansLibrary.Tests\obj\Debug\net6.0\LoansLibrary.Tests.pdb
 C:\Users\Admin\Downloads\nunit\Automated-Testing-NUnit\LoansLibrary.Tests\obj\Debug\net6.0\LoansLibrary.Tests.genruntimeconfig.cache
 C:\Users\Admin\Downloads\nunit\Automated-Testing-NUnit\LoansLibrary.Tests\obj\Debug\net6.0\ref\LoansLibrary.Tests.dll
+C:\Users\Admin\Downloads\nunit\Automated-Testing-NUnit\LoansLibrary.Tests\bin\Debug\net6.0\Data.csv
