@@ -90,5 +90,16 @@ namespace LoansLibrary.Tests
             var sut = new LoanRepaymentCalculator();
             var monthlyPayment = sut.CalculateMonthlyRepayment(new LoanAmount("USD", principal), interestRate, new LoanTerm(termInYears));
         }
+
+        [Test]
+        public void CalculateCorrectMonthlyRepayment_Rangel(
+        [Range(50_000, 1_000_000, 50_000)] decimal principal,
+        [Range(0.5, 20.0, 0.5)] decimal interestRate,
+        [Values(10, 20, 30)] int termInYears
+        )
+        {
+            var sut = new LoanRepaymentCalculator();
+            sut.CalculateMonthlyRepayment(new LoanAmount("USD", principal), interestRate, new LoanTerm(termInYears));
+        }
     }
 }
