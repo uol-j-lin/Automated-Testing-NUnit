@@ -88,7 +88,9 @@ namespace LoansLibrary.Tests
             // don't care about the expected monthly repayment, only that the product is there
             //Assert.That(comparisons, Has.Exactly(1).Property("ProductName").EqualTo("a").And.Property("InterestRate").EqualTo(1).And.Property("MonthlyRepayment").GreaterThan(0));
 
-            Assert.That(comparisons, Has.Exactly(1).Matches<MonthlyRepaymentComparison>(item => item.ProductName == "a" && item.InterestRate == 1 && item.MonthlyRepayment > 0));
+            // Assert.That(comparisons, Has.Exactly(1).Matches<MonthlyRepaymentComparison>(item => item.ProductName == "a" && item.InterestRate == 1 && item.MonthlyRepayment > 0));
+
+            Assert.That(comparisons, Has.Exactly(1).Matches(new MonthlyRepaymentGreaterThanZeroConstraint("a", 1)));
         }
     }
 }
