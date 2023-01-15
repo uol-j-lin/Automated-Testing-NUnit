@@ -10,6 +10,16 @@ namespace LoansLibrary.Tests
 {
     internal class MonthlyRepaymentGreaterThanZeroConstraint : Constraint
     {
+        // define some auto-implemented properties
+        public string ExpectedProductName { get; }
+        public decimal ExpectedInterestRate { get; }
+
+        public MonthlyRepaymentGreaterThanZeroConstraint(string expectedProductName, decimal expectedInterestRate)
+        {
+            ExpectedProductName = expectedProductName;
+            ExpectedInterestRate = expectedInterestRate;
+        }
+
         public override ConstraintResult ApplyTo<TActual>(TActual actual)
         {
             // type cast
@@ -22,7 +32,7 @@ namespace LoansLibrary.Tests
 
             if (comparison.InterestRate == ExpectedInterestRate &&
                 comparison.ProductName == ExpectedProductName &&
-                comparison.MonthlyPayment > 0)
+                comparison.MonthlyRepayment > 0)
             {
                 return new ConstraintResult(this, actual, ConstraintStatus.Success);
             }
