@@ -36,6 +36,8 @@ namespace LoansLibrary.Tests
             {
                 return new ConstraintResult(this, actual, ConstraintStatus.Success);
             }
+
+            return new ConstraintResult(this, actual, ConstraintStatus.Failure);
         }
     }
 }
