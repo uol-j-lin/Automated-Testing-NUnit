@@ -19,6 +19,13 @@ namespace LoansLibrary.Tests
             {
                 return new ConstraintResult(this, actual, ConstraintStatus.Error);
             }
+
+            if (comparison.InterestRate == ExpectedInterestRate &&
+                comparison.ProductName == ExpectedProductName &&
+                comparison.MonthlyPayment > 0)
+            {
+                return new ConstraintResult(this, actual, ConstraintStatus.Success);
+            }
         }
     }
 }
