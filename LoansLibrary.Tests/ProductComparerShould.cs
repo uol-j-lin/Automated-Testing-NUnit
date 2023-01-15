@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace LoansLibrary.Tests
 {
     [TestFixture]
-    [Category("Product Comparison")]
+    [ProductComparison]
 
     public class ProductComparerShould
     {

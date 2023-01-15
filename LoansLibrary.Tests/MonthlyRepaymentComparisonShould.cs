@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace LoansLibrary.Tests
 {
     [TestFixture]
-    [Category("Product Comparison")]
+    [ProductComparison]
     public class MonthlyRepaymentComparisonShould
     {
         [Test]
